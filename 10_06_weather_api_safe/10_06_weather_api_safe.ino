@@ -4,9 +4,9 @@
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
-const char* ssid = "MONKMAKES_GUEST";
-const char* password = "6KeCt4cu9YfY";
-const char* url = "http://api.openweathermap.org/data/2.5/weather?lat=53.925854&lon=-3.021994&appid=ea751fc7712f27059e8a99448213b712";
+const char* ssid = "Monk";
+const char* password = "d4daaa7eda";
+const char* url = "http://api.openweathermap.org/data/2.5/weather?lat=37.886538&lon=-4.784684&appid=ea751fc7712f27059e8a99448213b712";
 
 const long fetchPeriod = 60000L; // milliseconds 
 long lastFetchTime = 0;
@@ -45,29 +45,21 @@ void getWeatherData() {
   int responseCode = client.GET();
   if (responseCode == HTTP_CODE_OK) {
     String data = client.getString();
-    String tempText = extractValue(data, "\"temp\":", false);
-    tempC = tempText.toInt() - 273;
-    placeText = extractValue(data, "\"name\":", true);
     //Serial.println(data);
-  }
-}
-
-String extractValue(String data, char* key, boolean isString) {
-  int valueStartIndex = data.indexOf(key);
-  int n = strlen(key);
-  String value = "";
-  if (valueStartIndex > -1) {
-    valueStartIndex += n;
-    int valueEndIndex = data.indexOf(",", valueStartIndex);
-    if (isString) {
-      valueStartIndex ++;
-      valueEndIndex --;
+    int valueStartIndex = data.indexOf("\"temp\":"); 
+    if (valueStartIndex > -1) {
+      int valueEndIndex = data.indexOf(",", valueStartIndex);
+      String tempText = data.substring(valueStartIndex + 7, valueEndIndex);
+      Serial.println(tempText);
+      tempC = tempText.toInt() - 273;
     }
-    value = data.substring(valueStartIndex, valueEndIndex);
-    Serial.println(value);
-    return value;
+    valueStartIndex = data.indexOf("\"name\":");
+    if (valueStartIndex > -1) {
+      int valueEndIndex = data.indexOf(",", valueStartIndex);
+      placeText = data.substring(valueStartIndex + 8, valueEndIndex-1);
+      Serial.println(placeText);
+    }
   }
-  return String("");
 }
 
 void updateDisplay() {

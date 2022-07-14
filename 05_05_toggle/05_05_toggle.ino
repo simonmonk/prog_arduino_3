@@ -11,6 +11,5 @@ void loop()  {
   if (digitalRead(inputPin) == LOW) {
      ledValue = ! ledValue;
      digitalWrite(ledPin, ledValue);
-     delay(500);
   }
 }

@@ -1,11 +1,11 @@
 #include <SPI.h>
-#include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 
 Adafruit_SSD1306 display(128, 64, &Wire, -1); 
 
-void setup() {               
+void setup() {       
+  Wire.begin(17, 16); // SDA, SCL         
   display.begin(SSD1306_SWITCHCAPVCC, 0x3c);  // may need to change this
   display.setTextSize(4);
   display.setTextColor(WHITE);
