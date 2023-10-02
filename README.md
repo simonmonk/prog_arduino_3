@@ -1,6 +1,6 @@
-# programming_arduino_ed2
+# Peogramming Arduino: Getting Started with Sketches - Example Code
 
-The source code for the sketches in the second edition of the book [Programming Arduino: Getting Started with Sketches](https://www.amazon.com/Programming-Arduino-Getting-Started-Sketches/dp/1259641635) by Simon Monk published by McGraw-Hill Education (TAB)
+The source code for the sketches in the third edition of the book [Programming Arduino: Getting Started with Sketches](https://www.amazon.com/Programming-Arduino-Getting-Started-Sketches/dp/1259641635) by Simon Monk published by McGraw-Hill Education (TAB)
 
 This code is also used in [my Udemy course: Programming Arduino](https://www.udemy.com/course/programming-arduino).
 
@@ -9,4 +9,4 @@ This code is also used in [my Udemy course: Programming Arduino](https://www.ude
 
 
 
-![Programming Arduino: Getting Started with Sketches](https://i2.wp.com/simonmonk.org/wp-content/uploads/2013/11/cover4.jpg?resize=333%2C499)
+![Programming Arduino: Getting Started with Sketches](https://i1.wp.com/simonmonk.org/wp-content/uploads/2022/04/cover.png?zoom=2&resize=334%2C499)
