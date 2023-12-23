@@ -8,7 +8,7 @@ int numCols = 16;
 
 void setup() {
   Serial.begin(9600);
-  lcd.begin(numRows, numCols);
+  lcd.begin(numCols, numRows);
   lcd.clear();
   lcd.setCursor(0,0);
   lcd.print("Arduino");
