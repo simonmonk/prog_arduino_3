@@ -5,7 +5,7 @@ int period = 500;
 void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(interruptPin, INPUT_PULLUP);
-  attachInterrupt(digitalPinToInterrupt(pin), goFast, FALLING);
+  attachInterrupt(digitalPinToInterrupt(interruptPin), goFast, FALLING);
 }
 
 void loop()  {
